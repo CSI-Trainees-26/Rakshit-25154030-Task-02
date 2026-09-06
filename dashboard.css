@@ -100,10 +100,104 @@ ul.items{
     grid-template-columns: 1.4fr 1fr 1fr;
     gap:20px;
 }
-.dailyTask-manager{
+.dailyTask-manager , .water-intake-tracker , .daily-quote{
     background: color #161B2E;
     border-radius:16px;
     padding:20px;
     border:1px solid rgba(255, 255, 255, 0.08);
 }
+.task-adder{
+    display:flex;
+    background-color: #161B2E;
+    border:1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom:16px;
+}
+.task-adder input{
+    flex-grow:1;
+    padding:8px;
+    background-color:#0f1322;
+    color:#ffffff;
+    border:1px solid #232b45;
+    border-radius:8px;
+    outline:none;
+}
+.task-adder select{
+    padding:8px;
+    border:none;
+    background:#0f1322;
+    color:#ffffff;
+    border-radius:8px;
+    cursor:pointer;
+}
+.addtask{
+    padding:8px 16px;
+    background-color:#ff6b35;
+    color:#ffffff;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    border:none;
+}
+.task-state{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:12px;
+}
+.pending, .completed {
+  background-color: #111625;
+  border-radius: 12px;
+  padding: 12px;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pending h4, .completed h4 {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #7e8ba6;
+  margin-bottom: 4px;
+}
+.task-card{
+    background-color:#1a2035;
+    padding:8px 12px;
+    border-radius:8px;
+    border:1px solid rgba(255, 255, 255, 0.08);
+    cursor:grab;
+    user-select: none;
+}
+.task-card:active{
+    cursor:grabbing;
+    transform: scale(2);
+}
+.badge{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:8px;
+    font-size:12px;
+    font-weight:600;
+    margin-bottom:4px;
 
+}
+.badge-high {
+  background: rgba(239, 68, 68, 0.15);
+  color: #EF4444;
+}
+.task-title {
+  font-size: 13px;
+  color: #E2E8F0;
+  margin: 0;
+}
+.utilities-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:20px;
+    margin-bottom: 24px;
+}
+.sleep-card , .timer-card{
+    background-color:#161b2e;
+    border-radius:16px;
+    padding:20px;
+    margin-top:20px;
+    border:1px solid rgba(255, 255, 255, 0.08);
+}

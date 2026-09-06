@@ -54,6 +54,7 @@
                     <div class="habits-card cards">
                         habits card
                     </div>
+                </div>
                 </section>
                 <section class="bottom-grid">
                     <div class="dailyTask-manager">
@@ -66,22 +67,52 @@
                             </select>
                             <button class="addtask">Add Task</button>
                         </div>
-                            <div class="task-state">
-                                <div class="pending">
-                                    <h4>Pending</h4>
-                                </div>
-                                <div class="completed">
-                                    <h4>Completed</h4>
+                        <div class="task-state">
+                            <div class="pending">
+                                <h4>Pending</h4>
+                                <div class="task-card" draggable="true">
+                                    <span class="badge badge-high">High</span>
+                                    <p class="task-title">Review Design System</p>
                                 </div>
                             </div>
-                            
+                        <div class="completed">
+                            <h4>Completed</h4>
+                        </div>
+                        </div>                         
+                    </div>
+                    <div class="water-intake-tracker">
+                        <h2>Water Intake</h2>
+                        <p><span id="current-water">0</span>L/<span id="Target-water">5</span>L</p>
+                        <div class="addwater">
+                            <button class="add-water-250">+250 ml</button>
+                            <button class="add-water-500">+500 ml</button>
                         </div>
                     </div>
-                    <div class="water-intake-tracker"></div>
-                    <div class="daily-quote"></div>
+                    <div class="daily-quote">
+                        <h2>Daily Motivation</h2>
+                        <p id="quote-text">quotes</p>
+                        <button id="new-quote-btn">New Quote</button>
+                        <button id="save-quote">Save</button>
+                        <ul id="savedquotes"></ul>
+                    </div>
                 </section>
-            </div>
-        
+                <section class="utilities-grid">
+                    <div class="sleep-card">
+                        <h3>Sleep Tracker</h3>
+                        <input type="time" id="bedtime">
+                        <input type="time" id="waketime">
+                        <p>Duration: <span id="sleep-duration">0</span> hrs</p>
+                        <button id="calcSleepBtn">Calculate</button>
+                    </div>
+                    <div class="timer-card">
+                        <h3>Timer</h3>
+                        <div class="timer-display" id="timer">25:00</div>
+                        <button id="start-timer">start</button>
+                        <button id="pause">Pause</button>
+                        <button id="reset">Reset</button>
+                    </div>
+                </section>
+            </div>       
         </main>
     </div>
 </body>
