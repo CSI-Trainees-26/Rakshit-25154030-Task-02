@@ -33,3 +33,29 @@ async function getNewQuote(){
     }
 }
 quoteBtn.addEventListener('click' , getNewQuote);
+
+let sleepBtn = document.getElementById("calcsleepbtn");
+sleepBtn.addEventListener('click' , ()=>{
+    let bedtime = document.getElementById("bedtime").value;
+    let waketime = document.getElementById("waketime").value;
+    if(!bedtime || !waketime){
+        document.getElementById("sleep-duration").innerText = `Enter both the time first`;
+        return;
+    }
+    let date1 = new Date(bedtime);
+    let date2 = new Date(waketime);
+
+    let date = Math.abs(date2 - date1);
+
+    document.getElementById("sleep-duration").innerText = `${date/(1000*60*60).toFixed(1)}`;
+});
+
+let save = document.getElementById("save-quote");
+let mysavedquote = JSON.parse(localStorage.getItem("savedQuotes")) || [];
+function saveCurrentQuote(){
+    mysavedquote.push(quoteText.innerText);
+    localStorage.setItem("savedQuotes" ,JSON.stringify(mysavedquote));
+    save.innerText = `saved!`;
+    setTimeout(()=>{save.innerText = `save`} , 1000);
+}
+save.addEventListener('click' , saveCurrentQuote);
