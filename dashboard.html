@@ -32,16 +32,14 @@
                 </a>
             </header>
 
-            <div class="Dashboard-area">
-                <section class="banner-card">
-                    <div>
-                        <h2>Welcome Back Rakshit</h2>
-                        <p>quote</p>
-                    </div>
-
-                    <div>
-                        banner images
-                    </div>
+            <section class="banner-card">
+                <div>
+                    <h2>Welcome Back Rakshit</h2>
+                    <p>quote</p>
+                </div>
+                <div>
+                    banner images
+                </div>
                 </section>
                 <section class="card-container">
                     <div class="task-bar cards">
@@ -54,7 +52,7 @@
                     <div class="habits-card cards">
                         habits card
                     </div>
-                </div>
+                
                 </section>
                 <section class="bottom-grid">
                     <div class="dailyTask-manager">
@@ -84,8 +82,8 @@
                         <h2>Water Intake</h2>
                         <p><span id="current-water">0</span>L/<span id="Target-water">5</span>L</p>
                         <div class="addwater">
-                            <button class="add-water-250">+250 ml</button>
-                            <button class="add-water-500">+500 ml</button>
+                            <button class="add-water-250" id="add-water-250">+250 ml</button>
+                            <button class="add-water-500" id="add-water-500">+500 ml</button>
                         </div>
                     </div>
                     <div class="daily-quote">
@@ -102,7 +100,7 @@
                         <input type="time" id="bedtime">
                         <input type="time" id="waketime">
                         <p>Duration: <span id="sleep-duration">0</span> hrs</p>
-                        <button id="calcSleepBtn">Calculate</button>
+                        <button id="calcsleepbtn">Calculate</button>
                     </div>
                     <div class="timer-card">
                         <h3>Timer</h3>
@@ -116,4 +114,5 @@
         </main>
     </div>
 </body>
+<script src="app.js"></script>
 </html>

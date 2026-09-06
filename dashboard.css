@@ -4,6 +4,15 @@
     color: #ffffff;
     margin : 0;
     padding: 0;
+    font-family:-apple-system, BlinkMacSystemFont,sans-serif;
+}
+body{
+    background:#0b0f19;
+    color:#e2e8f0;
+    line-height:1.5;
+}
+h1, h2, h3, h4, p, span {
+  background: transparent !important;
 }
 .app-layout {
     display: grid;
@@ -68,6 +77,7 @@ ul.items{
     padding:0px 32px 32px 32px;
 }
 .banner-card{
+    
     background:#161B2E;
     display:flex;
     align-items:center;
@@ -82,7 +92,6 @@ ul.items{
     grid-template-columns:1fr 1.6fr 1fr;
     gap:24px;
     border-radius:16px;
-    background:#161B2E;
     margin-bottom: 24px;
 }
 .cards{
@@ -200,4 +209,54 @@ ul.items{
     padding:20px;
     margin-top:20px;
     border:1px solid rgba(255, 255, 255, 0.08);
+}
+button{
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:500;
+
+}
+.addwater button{
+    background:rgba(0 , 210 , 215 , 0.12);
+    color:#00d2ff;
+    border: 1px solid rgba(239, 68, 68, 0.15);
+    padding:6px;
+    font-size:12px;
+}
+.addwater button:hover{
+    background:rgba(0 , 210 , 215 , 0.3);
+}
+
+.daily-quote button{
+    background:#8b5cf6;
+    padding:6px 14px;
+    color:#fff;
+    font-size:12px;
+    margin-right:12px;
+}
+#calcsleepbtn , #pause , #reset , #start-timer{
+    background:#1e2640;
+    color:#e2e8f0;
+    border:1px solid #2e3856;
+    padding: 6px 14px;
+}
+#calcsleepbtn:hover , #pause:hover , #reset:hover , #start-timer:hover{
+    background:#2a3454;
+}
+#bedtime , #waketime{
+    background:#0f1322;
+    color:#fff;
+    border:1px solid #232b45;
+    border-radius:8px;
+    color-scheme: dark;
+}
+.timer-display, #timer {
+    display:flex;
+    font-size: 32px;
+    font-weight: 700;
+    color: #ff6b35;
+    letter-spacing: 2px;
+    margin: 10px 0;
+    font-variant-numeric: tabular-nums; /* Numbers change hone par layout jump nahi karega */
 }
