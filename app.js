@@ -118,3 +118,38 @@ pending.addEventListener('drop' , (e)=>{
     localStorage.setItem("pending" , pending.innerHTML);
     localStorage.setItem("completed" , completed.innerHTML);
 });
+
+let input = document.getElementById("add-task");
+let select = document.getElementById("priority");
+let btn = document.getElementById("addtask");
+
+let taskname = input.ariaValueMax;
+let priority = select.value;
+let div = document.createElement('div');
+let span = document.createElement('span');
+let p = document.createElement('p');
+div.className = 'task-card';
+div.id = 'task-card';
+div.setAttribute('draggable' , true); 
+
+if(priority ==='high'){
+    span.className = 'badge badge-high';
+}
+if(priority === 'medium'){
+    span.className = 'badge badge-medium';
+}
+if(priority == 'low'){
+    span.className = 'badge badge-low';
+}
+span.innerText = `${priority}`;
+p.className = 'task-title';
+p.innerText = `${taskname}`;
+
+div.appendChild(span);
+div.appendChild(p);
+btn.addEventListener('click' , addNewTask);
+function addNewTask(){
+    pending.appendChild(div);
+    localStorage.setItem("pending" , pending.innerHTML);
+    pending.innerHTML = localStorage.getItem("pending");
+}

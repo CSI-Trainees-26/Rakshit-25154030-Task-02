@@ -201,6 +201,14 @@ ul.items{
   background: rgba(239, 68, 68, 0.15);
   color: #EF4444;
 }
+.badge-medium{
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef6b6b;
+}
+.badge-low{
+    background: rgba(239, 68, 68, 0.15);
+    color: #bea0a0;
+}
 .task-title {
   font-size: 13px;
   color: #E2E8F0;
