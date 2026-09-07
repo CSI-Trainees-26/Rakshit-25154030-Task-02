@@ -68,14 +68,22 @@
                         <div class="task-state">
                             <div class="pending">
                                 <h4>Pending</h4>
-                                <div class="task-card" draggable="true">
+                                <div class="task-card" id="task-card"  draggable="true">
+                                    <span class="badge badge-high">High</span>
+                                    <p class="task-title">Review Design System</p>
+                                </div>
+                                <div class="task-card" id="task-card"  draggable="true">
+                                    <span class="badge badge-high">High</span>
+                                    <p class="task-title">Review Design System</p>
+                                </div>
+                                <div class="task-card" id="task-card"  draggable="true">
                                     <span class="badge badge-high">High</span>
                                     <p class="task-title">Review Design System</p>
                                 </div>
                             </div>
-                        <div class="completed">
-                            <h4>Completed</h4>
-                        </div>
+                            <div class="completed">
+                                <h4>Completed</h4>
+                            </div>
                         </div>                         
                     </div>
                     <div class="water-intake-tracker">
@@ -91,7 +99,7 @@
                         <p id="quote-text">quotes</p>
                         <button id="new-quote-btn">New Quote</button>
                         <button id="save-quote">Save</button>
-                        <ul id="savedquotes"></ul>
+                        <ul id="savedquotes">saved Quotes:</ul>
                     </div>
                 </section>
                 <section class="utilities-grid">

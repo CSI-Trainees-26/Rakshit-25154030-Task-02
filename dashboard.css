@@ -115,6 +115,12 @@ ul.items{
     padding:20px;
     border:1px solid rgba(255, 255, 255, 0.08);
 }
+#savedquotes{
+    max-height: 150px ;
+    overflow-y: auto;
+    scrollbar-width: none;
+    margin-top:16px;
+}
 .task-adder{
     display:flex;
     background-color: #161B2E;
@@ -157,6 +163,9 @@ ul.items{
   border-radius: 12px;
   padding: 12px;
   min-height: 160px;
+  max-height:200px;
+  overflow-y: scroll;
+  scrollbar-width: none;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -177,7 +186,7 @@ ul.items{
 }
 .task-card:active{
     cursor:grabbing;
-    transform: scale(2);
+    transform: scale(0.9);
 }
 .badge{
     display:inline-block;
@@ -258,5 +267,5 @@ button{
     color: #ff6b35;
     letter-spacing: 2px;
     margin: 10px 0;
-    font-variant-numeric: tabular-nums; /* Numbers change hone par layout jump nahi karega */
+    font-variant-numeric: tabular-nums;
 }
