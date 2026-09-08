@@ -21,21 +21,26 @@ add500.addEventListener('click' , ()=>{
 
 let sleepBtn = document.getElementById("calcsleepbtn");
 sleepBtn.addEventListener('click' , ()=>{
-    let bedtime = document.getElementById("bedtime").textcontent;
-    let waketime = document.getElementById("waketime").textContent;
+    console.log("click")
+    let bedtime = document.getElementById("bedtime").value;
+    let waketime = document.getElementById("waketime").value;
     if(!bedtime || !waketime){
         document.getElementById("sleep-duration").innerText = `Enter both the time first`;
         return;
     }
-    let date1 = new Date(bedtime);
-    let date2 = new Date(waketime);
-    console.log(date1);
-    console.log(date2);
+    let time1 = bedtime.split(":");
+    let time2 = waketime.split(":");
+    let firsttime = Number(time1[0]) * 60 + Number(time1[1]);
+    let secondtime = Number(time2[0]*60 + Number(time2[1]));
 
-    let date = Math.abs(date2.now - date1.now);
-    console.log(date);
+    let time = secondtime - firsttime;
+    if(time >= 0){
+        document.getElementById("sleep-duration").innerText = `${Math.floor(time/60)}hrs and ${time%60} min`;
 
-    document.getElementById("sleep-duration").innerText = `${date/(1000*60*60).toFixed(1)}`;
+    }else{
+        time += 24*60;
+        document.getElementById("sleep-duration").innerText = `${Math.floor(time/60)}hrs and ${time%60} min`;
+    }
 });
 
 let quoteText = document.getElementById("quote-text");
@@ -119,37 +124,85 @@ pending.addEventListener('drop' , (e)=>{
     localStorage.setItem("completed" , completed.innerHTML);
 });
 
-let input = document.getElementById("add-task");
-let select = document.getElementById("priority");
 let btn = document.getElementById("addtask");
 
-let taskname = input.ariaValueMax;
-let priority = select.value;
-let div = document.createElement('div');
-let span = document.createElement('span');
-let p = document.createElement('p');
-div.className = 'task-card';
-div.id = 'task-card';
-div.setAttribute('draggable' , true); 
 
-if(priority ==='high'){
-    span.className = 'badge badge-high';
-}
-if(priority === 'medium'){
-    span.className = 'badge badge-medium';
-}
-if(priority == 'low'){
-    span.className = 'badge badge-low';
-}
-span.innerText = `${priority}`;
-p.className = 'task-title';
-p.innerText = `${taskname}`;
-
-div.appendChild(span);
-div.appendChild(p);
 btn.addEventListener('click' , addNewTask);
 function addNewTask(){
+    let input = document.getElementById("add-task");
+    let select = document.getElementById("priority");
+    let taskname = input.value;
+    let priority = select.value;
+    let div = document.createElement('div');
+    let span = document.createElement('span');
+    let p = document.createElement('p');
+    div.className = 'task-card';
+    div.id = 'task-card';
+    div.setAttribute('draggable' , true); 
+
+    if(priority ==='high'){
+        span.className = 'badge badge-high';
+    }
+    if(priority === 'medium'){
+        span.className = 'badge badge-medium';
+    }
+    if(priority == 'low'){
+        span.className = 'badge badge-low';
+    }
+    span.innerText = `${priority}`;
+    p.className = 'task-title';
+    p.innerText = `${taskname}`;
+    div.appendChild(span);
+    div.appendChild(p);
+    div.addEventListener('dragstart' , (e)=>{
+        selected = e.target;
+    });
     pending.appendChild(div);
     localStorage.setItem("pending" , pending.innerHTML);
-    pending.innerHTML = localStorage.getItem("pending");
+    input.value = "";
 }
+
+let timerCard = document.getElementById("timer");
+let minutes = document.getElementById("minutes");
+let seconds = document.getElementById("seconds");
+let startTimer = document.getElementById("start-timer");
+let pause = document.getElementById("pause");
+let reset = document.getElementById("reset");
+
+let time = 1500;
+let timer = null;
+function start(){
+    clearInterval(timer);
+    timer = setInterval(()=>{ 
+    if(time > 0){
+        time = time - 1;
+        let min = Math.floor(time / 60);
+        let sec = Math.floor(time % 60);
+        if(min < 10){
+            minutes.innerText = `0${min}`;
+        }else{
+            minutes.innerText = min;
+        }
+
+        if(sec < 10){
+            seconds.innerText = `0${sec}`;
+        }else{
+            seconds.innerText = sec;
+        }
+    }else{
+        clearInterval(timer);
+    }
+    },1000);
+}
+startTimer.addEventListener('click' , start);
+pause.addEventListener('click' , ()=>{
+    clearInterval(timer);
+})
+
+reset.addEventListener('click' , ()=>{
+    time = 1500;
+    minutes.innerText = "25";
+    seconds.innerText = "00";
+    clearInterval(timer);
+    timer = null;
+})

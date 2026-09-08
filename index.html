@@ -72,14 +72,6 @@
                                     <span class="badge badge-high">High</span>
                                     <p class="task-title">Review Design System</p>
                                 </div>
-                                <div class="task-card" id="task-card"  draggable="true">
-                                    <span class="badge badge-high">High</span>
-                                    <p class="task-title">Review Design System</p>
-                                </div>
-                                <div class="task-card" id="task-card"  draggable="true">
-                                    <span class="badge badge-high">High</span>
-                                    <p class="task-title">Review Design System</p>
-                                </div>
                             </div>
                             <div class="completed">
                                 <h4>Completed</h4>
@@ -107,12 +99,13 @@
                         <h3>Sleep Tracker</h3>
                         <input type="time" id="bedtime">
                         <input type="time" id="waketime">
-                        <p>Duration: <span id="sleep-duration">0</span> hrs</p>
+                        <p>Duration: <span id="sleep-duration">0 hrs</span></p>
                         <button id="calcsleepbtn">Calculate</button>
                     </div>
                     <div class="timer-card">
                         <h3>Timer</h3>
-                        <div class="timer-display" id="timer">25:00</div>
+                        <div class="timer-display" id="timer">
+                            <span id="minutes">25</span>:<span id="seconds">00</span></div>
                         <button id="start-timer">start</button>
                         <button id="pause">Pause</button>
                         <button id="reset">Reset</button>
