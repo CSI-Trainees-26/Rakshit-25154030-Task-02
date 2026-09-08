@@ -29,15 +29,33 @@ h1, h2, h3, h4, p, span {
 }
 .vertical-bar-items{
     list-style-type: none;
+    background-color:#161b2e;
+    height:40vh;
     padding: 0;
     margin: 0;
     display:flex;
     flex-direction:column;
     gap:24px;
+    text-align:center;
+    justify-content: space-evenly;
+}
+.vertical-bar-items li{
+    background-color:#161b2e;
 }
 .vertical-bar-items li a{
     text-decoration:none;
     color:#7E8BA6;
+    background-color:#161b2e;
+}
+.settings{
+    background-color:#161b2e;
+}
+.settings li{
+    background-color:#161b2e;
+}
+.settings li a{
+    text-decoration:none;
+    background-color:#161b2e;
 }
 .top-nav{
     display:flex;
@@ -74,6 +92,7 @@ ul.items{
     display:flex;
     flex-direction:column;
     overflow-y:auto;
+    scrollbar-width: none;
     padding:0px 32px 32px 32px;
 }
 .banner-card{
@@ -86,6 +105,9 @@ ul.items{
     border-radius: 16px;
     margin-bottom: 24px;
     border:1px solid rgba(255, 255, 255, 0.08)
+}
+.banner{
+    background:#161B2E;
 }
 .card-container{
     display:grid;
@@ -226,6 +248,9 @@ ul.items{
     padding:20px;
     margin-top:20px;
     border:1px solid rgba(255, 255, 255, 0.08);
+}
+.timer-display{
+    background-color: #161b2e;
 }
 button{
     border:none;

@@ -8,23 +8,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caacupe+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 </head>
 <body>
     <div class="app-layout">
         <aside class="sidebar">
             <ul class="vertical-bar-items">
-                <li><a href="#">Item 1</a></li>
-                <li><a href="#">Item 2</a></li>
-                <li><a href="#">Item 3</a></li>
+                <li><a href="#"><i class="fa-solid fa-border-all"></i>Dashboard</a></li>
+                <li><a href="#"><i class="fa-solid fa-list-check"></i>Tasks</a></li>
+                <li><a href="#"><i class="fa-solid fa-clock-rotate-left"></i> Trackers</a></li>
             </ul>
+            <ul class="settings">
+                <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+            </ul>
+
         </aside>
         <main class="main-content">
             <header class="top-nav">
                 <ul class="items">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
-                    <li><a href="#">Redis</a></li>
                 </ul>
                 <a href="#profile" class="user-profile-link">
                     <img src="Assets/avatar.png" alt="Profile" class="avatar-img" />
@@ -33,11 +37,11 @@
             </header>
 
             <section class="banner-card">
-                <div>
+                <div class="banner">
                     <h2>Welcome Back Rakshit</h2>
                     <p>quote</p>
                 </div>
-                <div>
+                <div class="banner">
                     banner images
                 </div>
                 </section>
