@@ -51,6 +51,7 @@ h1, h2, h3, h4, p, span {
     background-color:#161b2e;
 }
 .settings li{
+    list-style-type: none;
     background-color:#161b2e;
 }
 .settings li a{
@@ -301,4 +302,55 @@ button{
     letter-spacing: 2px;
     margin: 10px 0;
     font-variant-numeric: tabular-nums;
+}
+@media screen and (max-width : 770px) {
+    .app-layout{
+        display : flex;
+        flex-direction: column;
+    }
+    .vertical-bar-items{
+        display:flex;
+        flex-direction: row;
+        justify-content:space-around;
+        padding:10px , 0;
+        height:auto;
+    }
+    .vertical-bar-items a{
+        font-size:0px;
+    }
+    .vertical-bar-items i{
+        font-size:24px;
+    }
+    .sidebar{
+        height : auto;
+        flex-direction: row;
+    }
+    .bottom-grid{
+        display:grid;
+        grid-template-columns: 1fr;
+    }
+    .daily-quote , .water-intake-tracker , .dailyTask-manager{
+        width:100%;
+        margin-bottom:20px;
+    }
+    .task-adder{
+        flex-direction:column;
+        gap:10px;
+    }
+    .task-state{
+        grid-template-columns: 1fr;
+    }
+    .card-container{
+        disply:grid;
+        grid-template-columns: 1fr;
+    }
+
+    .utilities-grid{
+        grid-template-columns: 1fr;
+    }
+    .sleep-card , .timer-card{
+        width:100%;
+        margin-bottom:20px;
+    }
+    
 }
