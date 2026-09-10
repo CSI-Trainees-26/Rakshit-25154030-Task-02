@@ -1,23 +1,32 @@
-let currentWater = 0;
+let currentWater = parseFloat(localStorage.getItem("userWater")) || 0;
 const TargetWater = 5000;
+let watercircle = document.getElementById("water-progress-circle");
 let current_water = document.getElementById("current-water");
 let add250 = document.getElementById("add-water-250");
 let add500 = document.getElementById("add-water-500");
+current_water.innerText = `${currentWater/1000}`;
 function AddWater(n){
     currentWater += n;
     if(currentWater > TargetWater){
         return TargetWater;
     }
+    localStorage.setItem("userWater" , currentWater);
     return currentWater;
 }
+function updateWaterUI(){
+    current_water.innerText = `${currentWater/1000}`;
+    let degree = (currentWater/TargetWater) * 360;
+    watercircle.style.background = `conic-gradient(#00c8b6 ${degree}deg , #2a2f45 ${degree}deg)`;
+}
 add250.addEventListener('click' , ()=>{
-    let add = AddWater(250);
-    current_water.innerText = `${add/1000}`;
+    AddWater(250);
+    updateWaterUI();
 })
 add500.addEventListener('click' , ()=>{
-    let add = AddWater(500);
-    current_water.innerText = `${add/1000}`;
+    AddWater(500);
+    updateWaterUI();
 })
+updateWaterUI();
 
 let sleepBtn = document.getElementById("calcsleepbtn");
 sleepBtn.addEventListener('click' , ()=>{
@@ -206,3 +215,13 @@ reset.addEventListener('click' , ()=>{
     clearInterval(timer);
     timer = null;
 })
+
+greeting = document.getElementById("greeting-text");
+let currenthours = new Date().getHours();
+if(currenthours > 0 && currenthours < 12){
+    greeting.innerText = "Good Morning Rakshit";
+}else if(currenthours >= 12 && currenthours < 17){
+    greeting.innerText = "Good AfterNoon Rakshit";
+}else{
+    greeting.innerText = "Good Evening Rakshit";
+}

@@ -110,6 +110,11 @@ ul.items{
 .banner{
     background:#161B2E;
 }
+.banner-img {
+    height: 160px;
+    object-fit: contain;
+    margin-left: auto;
+}
 .card-container{
     display:grid;
     grid-template-columns:1fr 1.6fr 1fr;
@@ -126,6 +131,52 @@ ul.items{
     border-radius: 16px;
     background:#161B2E;
     border:1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease , box-shadow 0.3s ease , border-color 0.3s ease;
+}
+.cards:hover{
+    transform: translateY(-5px);
+    box-shadow:0px 10px 20px rgba(0 ,0 , 0 , 0.5),0 0 15px rgba(139, 92, 246, 0.15);
+    border-color: rgba(139, 92, 246, 0.4)
+}
+.progress-track{
+    width:100%;
+    height:10px;
+    background-color:#232b45;
+    border-radius:10px;
+}
+.progress-fill{
+    height:100%;
+    width:75%;
+    background-color: #8b5cf6;
+    border-radius:10px;
+    animation: fillbar 1s ease-out forwards;
+}
+@keyframes fillbar {
+    from{
+        width: 0%;
+    }
+    to{
+        width: 75%;
+    }
+}
+
+.habit-list{
+    display:flex;
+    flex-direction:column;
+    background-color: #161b2e;
+    gap:10px;
+}
+.habit-item{
+    background-color:#1a2035;
+    padding:8px 12px;
+    border-radius: 8px;
+    display:flex;
+    align-items: center;
+    gap:12px;
+    cursor: pointer;
+}
+.habit-item input{
+    cursor:pointer;
 }
 .bottom-grid{
     display:grid;
@@ -137,6 +188,12 @@ ul.items{
     border-radius:16px;
     padding:20px;
     border:1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease , box-shadow 0.3s ease , border-color 0.3s ease;
+}
+.dailyTask-manager:hover , .water-intake-tracker:hover , .daily-quote:hover{
+    transform: translateY(-5px);
+    box-shadow:0px 10px 20px rgba(0 ,0 , 0 , 0.5),0 0 15px rgba(139, 92, 246, 0.15);
+    border-color: rgba(139, 92, 246, 0.4)
 }
 #savedquotes{
     max-height: 150px ;
@@ -249,6 +306,12 @@ ul.items{
     padding:20px;
     margin-top:20px;
     border:1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease , box-shadow 0.3s ease , border-color 0.3s ease;
+}
+.sleep-card:hover , .timer-card:hover{
+    transform: translateY(-5px);
+    box-shadow:0px 10px 20px rgba(0 ,0 , 0 , 0.5),0 0 15px rgba(139, 92, 246, 0.15);
+    border-color: rgba(139, 92, 246, 0.4)
 }
 .timer-display{
     background-color: #161b2e;
@@ -258,7 +321,13 @@ button{
     border-radius:8px;
     cursor:pointer;
     font-weight:500;
-
+    margin-top : 20px;
+}
+.water-intake-tracker{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
 }
 .addwater button{
     background:rgba(0 , 210 , 215 , 0.12);
@@ -269,6 +338,37 @@ button{
 }
 .addwater button:hover{
     background:rgba(0 , 210 , 215 , 0.3);
+}
+.circular-progress {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(#00c8b6 216deg, #2a2f45 216deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #1a2035;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.progress-label {
+    font-size: 16px;
+    color: #a0a4b8;
 }
 
 .daily-quote button{
@@ -303,6 +403,14 @@ button{
     margin: 10px 0;
     font-variant-numeric: tabular-nums;
 }
+button{
+    transition:  transform 0.2 ease;
+}
+button:hover{
+    transform:scale(1.05);
+}
+
+
 @media screen and (max-width : 770px) {
     .app-layout{
         display : flex;

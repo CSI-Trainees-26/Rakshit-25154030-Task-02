@@ -38,11 +38,10 @@
 
             <section class="banner-card">
                 <div class="banner">
-                    <h2>Welcome Back Rakshit</h2>
-                    <p>quote</p>
+                    <h2 id="greeting-text">Welcome Back Rakshit</h2>
+                    <p>Take a look at your activities, don't stop and improve your activities</p>
                 </div>
-                <div class="banner">
-                    banner images
+                <div class="banner-image">
                 </div>
                 </section>
                 <section class="card-container">
@@ -51,10 +50,28 @@
                     </div>
 
                     <div class="weekly-progress cards">
-                        weekly progress
+                        <h4>Weekly Goals</h4>
+                        <span>75%</span>
+                        <div class="progress-track">
+                            <div class="progress-fill"></div>
+                        </div>
                     </div>
                     <div class="habits-card cards">
-                        habits card
+                        <h4>Daily Habits</h4>
+                        <div class="habit-list">
+                            <div class="habit-item">
+                                <input type="checkbox">
+                                <span>Reading</span>
+                            </div>
+                            <div class="habit-item">
+                                <input type="checkbox">
+                                <span>Meeting</span>
+                            </div>
+                            <div class="habit-item">
+                                <input type="checkbox">
+                                <span>Coding</span>
+                            </div>
+                        </div>
                     </div>
                 
                 </section>
@@ -84,7 +101,12 @@
                     </div>
                     <div class="water-intake-tracker">
                         <h2>Water Intake</h2>
-                        <p><span id="current-water">0</span>L/<span id="Target-water">5</span>L</p>
+                        <div class="circular-progress" id="water-progress-circle">
+                            <div class="inner-circle">
+                            <span class="progress-value" id="current-water">0</span>
+                            <span class="progress-label">/ 5 L</span>
+                            </div>
+                        </div>
                         <div class="addwater">
                             <button class="add-water-250" id="add-water-250">+250 ml</button>
                             <button class="add-water-500" id="add-water-500">+500 ml</button>
